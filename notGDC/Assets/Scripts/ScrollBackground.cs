@@ -6,10 +6,11 @@ public class ScrollBackground : MonoBehaviour
 {
     // Start is called before the first frame update
     private float length;
-    public float speed = 1f;
+    private float speed = 1f;
     void Start()
     {
         length = GetComponent<SpriteRenderer>().bounds.size.x;
+        speed = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().scrollSpeed;
     }
 
     // Update is called once per frame

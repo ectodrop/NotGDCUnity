@@ -10,7 +10,7 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 25a63327f814cd04cbdbd7e8ae6dfcf9, type: 3}
   textureSettings:
     textureType: 8
-    pixelsPerUnit: 32
+    pixelsPerUnit: 64
     transparentMask: 1
     transparentColor: {r: 0.13333334, g: 0.1254902, b: 0.20392159, a: 1}
     meshType: 1

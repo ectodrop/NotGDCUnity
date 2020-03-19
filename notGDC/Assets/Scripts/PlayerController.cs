@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Vector3 pos;                                // For movement
+    public float scrollSpeed = 1.0f;
+    
     public float speed = 2.0f;                         // Speed of movement
     public Camera cam;
     public float units = 1.0f;
@@ -62,13 +64,22 @@ public class PlayerController : MonoBehaviour
         
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);
         score += Time.deltaTime;
-        updater.scoreCount = (int)score;
+        if (score >= 1f)
+        {
+            score = 0;
+            updater.scoreCount++;
+        }
 
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.CompareTag("Obstacle")){
             Debug.Log("DEAD");
+        }
+        if (coll.CompareTag("Pickup"))
+        {
+            updater.scoreCount += 10;
+            Destroy(coll.gameObject);
         }
     }
 }

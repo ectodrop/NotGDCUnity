@@ -300,10 +300,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicles:
   - {fileID: 2981520923301351252, guid: cff855366f1322e45bcef4ba6fe166c6, type: 3}
+  - {fileID: 4919401740270186970, guid: 3cd27e2bc0b2dc340b3ea977de9eb9ff, type: 3}
+  powerups: []
   spawnerLeft: {fileID: 1245097216}
   spawnerRight: {fileID: 1157969382}
-  waveTime: 3
-  spawnChance: 5
+  delay: 1
+  obstacleSpawnChance: 22
+  pickupSpawnChance: 5
 --- !u!4 &688660741
 Transform:
   m_ObjectHideFlags: 0
@@ -755,6 +758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075852863677698729, guid: bc37d670de360fc4eb9be64c008df4d7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2075852863677698731, guid: bc37d670de360fc4eb9be64c008df4d7,
         type: 3}
