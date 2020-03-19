@@ -5,38 +5,35 @@ using UnityEngine;
 public class SpawnObstacles : MonoBehaviour
 {
     public List<GameObject> vehicles = new List<GameObject>();
-    public Transform spawner;
-
+    public Transform spawnerLeft, spawnerRight;
+    
     public float waveTime = 3.0f;
     private float waveTimer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        waveTimer = waveTime;
-        spawnObjects();
-    }
+
+    public float spawnChance = 5f;
+    // Start is called before the first frame update\
 
     // Update is called once per frame
     void Update()
     {
-        waveTimer -= Time.deltaTime;
-        if(waveTimer <= 0)
-        {
-            waveTimer = waveTime;
-            spawnObjects();
-        }
+        spawnObjectsSuburb();
     }
-    void spawnObjects()
+    void spawnObjectsSuburb()
     {
-        int exclude = Random.Range(-2, 3);
+        bool spawnRateLeft = Random.Range(1f,1000f) < spawnChance;
 
-        for (int i = -2; i <= 2; i++)
+        if (spawnRateLeft)
         {
-            if (i == exclude) continue;
-            Vector3 spawnPos = spawner.position;
-            spawnPos.y = 0;
-            spawnPos.y += i;
-            Instantiate(vehicles[0], spawnPos, Quaternion.identity);
+            GameObject car = Instantiate(vehicles[0], spawnerLeft);
+            car.gameObject.GetComponent<ObstacleBehaviour>().speed = 6;
         }
+
+        bool spawnRateRight = Random.Range(1f, 1000f) < spawnChance;
+        if (spawnRateRight)
+        {
+            GameObject car = Instantiate(vehicles[0], spawnerRight);
+            car.gameObject.GetComponent<ObstacleBehaviour>().speed = -6;
+        }
+
     }
 }

@@ -15,9 +15,9 @@ public class ObstacleBehaviour : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(transform.position.x + speed*Time.deltaTime, transform.position.y, transform.position.z); 
-        if(!IsVisible(Camera.main, GetComponent<SpriteRenderer>().bounds))
+        if(!IsVisible(Camera.main, GetComponent<Renderer>().bounds))
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         
     }

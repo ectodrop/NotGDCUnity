@@ -121,6 +121,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15.6
-  target: {fileID: 0}
   cam: {fileID: 0}
   units: 1
+  updater: {fileID: 0}
+  obstacle: {fileID: 0}
+  yMax: 0
+  yMin: 0
+  xMax: 0
+  xMin: 0
