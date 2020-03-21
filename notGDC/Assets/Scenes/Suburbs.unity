@@ -301,7 +301,8 @@ MonoBehaviour:
   vehicles:
   - {fileID: 2981520923301351252, guid: cff855366f1322e45bcef4ba6fe166c6, type: 3}
   - {fileID: 4919401740270186970, guid: 3cd27e2bc0b2dc340b3ea977de9eb9ff, type: 3}
-  powerups: []
+  powerups:
+  - {fileID: 515517644157094999, guid: ec1223261663caf43875216249c45510, type: 3}
   spawnerLeft: {fileID: 1245097216}
   spawnerRight: {fileID: 1157969382}
   delay: 1

@@ -28,7 +28,7 @@ public class SpawnObstacles : MonoBehaviour
     {
         bool spawnRateLeft = Random.Range(0,1000f) < obstacleSpawnChance;
 
-        if (spawnRateLeft && delayTimer == 0f)
+        if (spawnRateLeft && delayTimer <= 0f)
         {
             delayTimer = delay;
             GameObject car = Instantiate(vehicles[1], spawnerLeft);
@@ -36,7 +36,7 @@ public class SpawnObstacles : MonoBehaviour
         }
 
         bool spawnRateRight = Random.Range(0, 1000f) < obstacleSpawnChance;
-        if (spawnRateRight && delayTimer == 0f)
+        if (spawnRateRight && delayTimer <= 0f)
         {
             delayTimer = delay;
             GameObject car = Instantiate(vehicles[0], spawnerRight);

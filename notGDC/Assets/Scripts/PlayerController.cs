@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     }
     
     
-    void FixedUpdate()
+    void Update()
     {
         Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         Vector3 test, direction;
