@@ -12,6 +12,8 @@ public class SpawnObstacles : MonoBehaviour
     private float delayTimer = 0f;
     public float obstacleSpawnChance = 5f;
     public float pickupSpawnChance = 5f;
+
+    public int interval = 1;
     // Start is called before the first frame update\
     void Start()
     {
@@ -21,6 +23,13 @@ public class SpawnObstacles : MonoBehaviour
     void Update()
     {
         decreaseTime();
+
+        if (Time.time-10*interval <= 0)
+        {
+            interval++;
+            obstacleSpawnChance++;
+        }
+            
         spawnObstaclesSuburb();
         spawnPowerUpsSuburb();
     }

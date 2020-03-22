@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     Vector3 pos;                                // For movement
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.CompareTag("Obstacle")){
-            Debug.Log("DEAD");
+            SceneManager.LoadScene(3);
         }
         if (coll.CompareTag("Pickup"))
         {
