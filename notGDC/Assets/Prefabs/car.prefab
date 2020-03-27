@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4520102142388348767}
   - component: {fileID: -8053996007653864700}
   - component: {fileID: -6646031303112132035}
+  - component: {fileID: 1961824761026257318}
   m_Layer: 0
   m_Name: car
   m_TagString: Obstacle
@@ -71,9 +72,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 61913dfb9e1b0be49bdc8281915cfbff, type: 3}
+  m_Sprite: {fileID: -8030835215644163416, guid: 7956afcddbe785449b3e34cbf5bf6e5d,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 1}
@@ -108,7 +110,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021690547, y: -0.021690488}
+  m_Offset: {x: 0, y: -0.07}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -119,5 +121,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5228089, y: 0.6312611}
+  m_Size: {x: 1.29, y: 0.28}
   m_EdgeRadius: 0
+--- !u!95 &1961824761026257318
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981520923301351252}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37a4f4d5e2c4340409ce2642a1561a36, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

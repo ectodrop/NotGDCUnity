@@ -8,6 +8,7 @@ public class PressKeyToStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.fullScreen = false;
         UnloadAllScenesExcept("StartMenu");
     }
 

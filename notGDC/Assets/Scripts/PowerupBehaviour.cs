@@ -6,8 +6,13 @@ public class PowerupBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     float speed;
+    float halfWidth, halfHeight;
     void Start()
     {
+
+        halfWidth = GetComponent<SpriteRenderer>().bounds.size.x / 2;
+        halfHeight = GetComponent<SpriteRenderer>().bounds.size.y / 2;
+        Debug.Log(halfWidth);
         speed = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().scrollSpeed;
     }
 
@@ -15,17 +20,21 @@ public class PowerupBehaviour : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.left * Time.deltaTime * speed;
-        if (!IsVisible(Camera.main, GetComponent<SpriteRenderer>().bounds))
+        if (AtEdge())
         {
             Destroy(this.gameObject);
         }
     }
-    private bool IsVisible(Camera camera, Bounds bounds)
+    private bool AtEdge()
     {
-        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
-        if (GeometryUtility.TestPlanesAABB(planes, bounds))
+        Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        if (transform.position.x < -screenBounds.x -halfWidth||
+          transform.position.x > screenBounds.x + halfWidth||
+          transform.position.y < -screenBounds.y - halfHeight ||
+          transform.position.y > screenBounds.y + halfHeight)
+        {
             return true;
-        else
-            return false;
+        }
+        return false;
     }
 }

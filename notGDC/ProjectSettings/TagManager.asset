@@ -7,6 +7,8 @@ TagManager:
   - Obstacle
   - Wall
   - Pickup
+  - SpawnerLeft
+  - SpawnerRight
   layers:
   - Default
   - TransparentFX

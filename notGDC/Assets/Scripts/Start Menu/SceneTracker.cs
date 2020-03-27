@@ -12,11 +12,4 @@ public class SceneTracker : MonoBehaviour
         previousSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
 }

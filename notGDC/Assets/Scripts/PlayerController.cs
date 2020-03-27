@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
+    public bool godmode = false; //debugging
+
     Vector3 pos;                                // For movement
     public float scrollSpeed = 1.0f;
     
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        Vector3 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         Vector3 test, direction;
         if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position == pos )
         {
@@ -67,19 +69,24 @@ public class PlayerController : MonoBehaviour
         if (score >= 1f)
         {
             score = 0;
-            updater.scoreCount++;
+            UpdateScore.scoreCount++;
+            scrollSpeed += 0.1f;
         }
 
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.CompareTag("Obstacle")){
-            SceneManager.LoadScene(3);
-        }
-        if (coll.CompareTag("Pickup"))
+        if (!godmode)
         {
-            updater.scoreCount += 10;
-            Destroy(coll.gameObject);
+            if (coll.CompareTag("Obstacle"))
+            {
+                SceneManager.LoadScene(2);
+            }
         }
+            if (coll.CompareTag("Pickup"))
+            {
+                UpdateScore.scoreCount += 10;
+                Destroy(coll.gameObject);
+            }
     }
 }
